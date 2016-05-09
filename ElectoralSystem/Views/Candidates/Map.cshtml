@@ -6,20 +6,9 @@
 
 @section styles{
 
-    <style type="text/css">
-        #mapCandidates {
-            height: 500px;
-            min-width: 310px;
-            max-width: 100%;
-            margin: 0 auto;
-        }
 
-        .loading {
-            margin-top: 10em;
-            text-align: center;
-            color: gray;
-        }
-    </style>
+
+<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 }
 
 
@@ -32,32 +21,33 @@
         <!--Page Title-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         @*<div id="page-title">
-            <h1 class="page-header text-overflow">Lista de Distribución</h1>
+                <h1 class="page-header text-overflow">Lista de Distribución</h1>
 
 
-        </div>*@
+            </div>*@
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <!--End page title-->
         <!--Page content-->
         <!--===================================================-->
         <div id="page-content">
 
-            <div id="mapCandidates"></div>
+           
 
-
-            </div>
-
+            <div id="mapCandidates" style="height: 500px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
         </div>
 
     </div>
 
+</div>
 
-            @section scripts{
 
-                <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-                <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-                <script src="https://code.highcharts.com/mapdata/countries/do/do-all.js"></script>
+@section scripts{
 
-                <script src="@Url.Content("~/Scripts/Electoral/Map.js")"></script>
-            }
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/maps/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/do/do-all.js"></script>
+
+    <script src="@Url.Content("~/Scripts/Electoral/Map.js")"></script>
+}
 
