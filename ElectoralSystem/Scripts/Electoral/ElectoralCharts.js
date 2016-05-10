@@ -268,12 +268,12 @@ function getBudget() {
             },
             yAxis: {
                 title: {
-                    text: 'Fruit units'
+                    text: ''
                 }
             },
             tooltip: {
                 shared: true,
-                valueSuffix: ' units'
+                valueSuffix: ' pesos'
             },
             credits: {
                 enabled: false

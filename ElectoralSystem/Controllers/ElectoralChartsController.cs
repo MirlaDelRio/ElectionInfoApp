@@ -16,9 +16,10 @@ namespace ElectoralSystem.Controllers
 
         public ContentResult GetCandidatesList(string codeMap)
         {
+            string[] codeMaps = codeMap.Split('-');
             db = new ElectoralDbAccess();
 
-            DataTable dt = db.GetCandidatesList(codeMap);
+            DataTable dt = db.GetCandidatesList(codeMaps[1]);
                   
             return Content(JsonConvert.SerializeObject(dt), "json/application");
         }

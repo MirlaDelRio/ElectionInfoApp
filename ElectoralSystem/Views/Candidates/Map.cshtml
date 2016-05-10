@@ -6,6 +6,9 @@
 
 @section styles{
 
+<link href="@Url.Content("~/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css")" rel="stylesheet" />
+
+
     <style type="text/css">
         #mapCandidates {
             height: 500px;
@@ -80,6 +83,11 @@
 <script src="https://code.highcharts.com/maps/modules/data.js"></script>
 <script src="https://code.highcharts.com/maps/modules/drilldown.js"></script>
 <script src="https://code.highcharts.com/mapdata/countries/do/do-all.js"></script>
+
+
+<script src="@Url.Content("~/plugins/datatables/media/js/jquery.dataTables.js")"></script>
+<script src="@Url.Content("~/plugins/datatables/media/js/dataTables.bootstrap.js")"></script>
+<script src="@Url.Content("~/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js")"></script>
 
     <script src="@Url.Content("~/Scripts/Electoral/Map.js")"></script>
 }

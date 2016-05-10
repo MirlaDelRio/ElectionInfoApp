@@ -1,4 +1,6 @@
-﻿$(function () {
+﻿var tbCandidatesList = [];
+
+$(function () {
 
     /*
     TODO:
@@ -39,7 +41,7 @@
 
                         // Show the spinner
                         chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
-                        getCandidatesList();
+                        getCandidatesList(e.point.drilldown);
                         chart.hideLoading();
                         clearTimeout(fail);
 
@@ -151,16 +153,36 @@ function getCandidatesList(key) {
 
     $("#candidatesList").show();
 
-    $.get($("#tbCandidatesList").data("url"), { "": key }, function () {
+   
 
-       // $("#candidatesList").
+    $.get($('#tbCandidatesList').data("url"), { codeMap: key }, function (report) {
 
-    })
+        if (!$.fn.DataTable.isDataTable('#tbCandidatesList')) {
+            tbCandidatesList = $('#tbCandidatesList').DataTable({
+
+            });
+          
+        }
+
+        tbCandidatesList.clear().draw();
+
+        $.each(report, function (i, d) {
+
+            tbCandidatesList.row.add([
+                  '<img src="/img/av2.png" class="img-circle img-sm" />',
+                  '<span class="text-semibold text-center">' + d.nombre + '</span><br><small class="text-muted">' + d.cargo + '</small>',
+                  '<span class="text-semibold text-center">' + d.nivel_cargo + '</span>',
+                  '<span class="text-semibold text-center">' + d.provincia + '</span>',
+                    '<span class="text-semibold text-center">' + d.partido + '</span>'
+            ]).draw();
+
+        });
 
 
+        $('html, body').animate({
+            scrollTop: $("#tbCandidatesList").offset().top
+        }, 1000);
 
-    $('html, body').animate({
-        scrollTop: $("#candidatesList").offset().top
-    }, 1000);
+    });
+
 }
-
