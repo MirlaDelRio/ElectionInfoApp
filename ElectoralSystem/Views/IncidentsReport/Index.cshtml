@@ -3,7 +3,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
  <div class="boxed">
 
             <!--CONTENT CONTAINER-->
@@ -22,17 +21,17 @@
                             <!--===================================================-->
                             <div class="panel">
                                 <div class="panel-body">
-                                    <input type="text" class="form-control" placeholder="Nombre" />
-                                    <br />
-                                    <input type="text" id="user-id" class="form-control" placeholder="C&eacute;dula" />
-                                    <br />
-                                    <textarea class="form-control" rows="2" placeholder="Describir irregularidad"></textarea>
-                                    <div class="mar-top clearfix">
-                                        <button class="btn btn-sm btn-primary pull-right" type="submit"> Publicar</button>
-                                        <a class="btn btn-trans btn-icon fa fa-video-camera add-tooltip" href="#" data-original-title="Añadir Video" data-toggle="tooltip"></a>
-                                        <a class="btn btn-trans btn-icon fa fa-camera add-tooltip" href="#" data-original-title="Añadir Foto" data-toggle="tooltip"></a>
-                                        <a class="btn btn-trans btn-icon fa fa-file add-tooltip" href="#" data-original-title="Añadir Archivo" data-toggle="tooltip"></a>
-                                    </div>
+                                    <form method="post">
+                                        <input id="informe-nombre" type="text" class="form-control" placeholder="Nombre" />
+                                        <br />
+                                        <input type="text" id="informe-cedula" class="form-control" placeholder="C&eacute;dula" />
+                                        <br />
+                                        <textarea id="informe-mensaje" class="form-control" rows="2" placeholder="Describir irregularidad"></textarea>
+                                        <div class="mar-top clearfix">
+                                            <button class="btn btn-sm btn-primary pull-right" type="submit"> Publicar</button>
+                                            <input title="" type="file" class="btn btn-trans btn-icon fa fa-camera add-tooltip" data-original-title="Añadir Foto" data-toggle="tooltip"/>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <!--===================================================-->
