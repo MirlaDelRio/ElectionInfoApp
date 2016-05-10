@@ -17,5 +17,17 @@ namespace ElectoralSystem
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        void Session_Start(object sender, EventArgs e)
+        {
+            // Redirect mobile users to the mobile home page
+            HttpRequest httpRequest = HttpContext.Current.Request;
+            if (httpRequest.Browser.IsMobileDevice)
+            {
+                Console.WriteLine("is a mobile device");
+                string redirectTo = "~/IncidentsReport/";
+                HttpContext.Current.Response.Redirect(redirectTo);
+            }
+        }
     }
 }
