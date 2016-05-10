@@ -147,9 +147,17 @@
     });
 });
 
-function getCandidatesList() {
+function getCandidatesList(key) {
 
     $("#candidatesList").show();
+
+    $.get($("#tbCandidatesList").data("url"), { "": key }, function () {
+
+       // $("#candidatesList").
+
+    })
+
+
 
     $('html, body').animate({
         scrollTop: $("#candidatesList").offset().top
