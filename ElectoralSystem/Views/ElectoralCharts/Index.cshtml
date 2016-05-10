@@ -1,0 +1,119 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section styles{
+
+    <style type="text/css">
+        #mapCandidates {
+            height: 500px;
+            min-width: 310px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .loading {
+            margin-top: 10em;
+            text-align: center;
+            color: gray;
+        }
+    </style>
+}
+
+
+<div class="boxed">
+
+    <!--CONTENT CONTAINER-->
+    <!--===================================================-->
+    <div id="content-container">
+
+        <!--Page Title-->
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        @*<div id="page-title">
+                <h1 class="page-header text-overflow">Lista de Distribución</h1>
+
+
+            </div>*@
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <!--End page title-->
+        <!--Page content-->
+        <!--===================================================-->
+        <div id="page-content">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Proyecci&oacute;n población mayor de edad 2016</h3>
+                        </div>
+
+                        <!--Hover Rows-->
+                        <!--===================================================-->
+                        <div class="panel-body">
+                            <div id="totalVoters">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Proyecci&oacute;n población estimada por la ONE 2016</h3>
+                        </div>
+
+                        <!--Hover Rows-->
+                        <!--===================================================-->
+                        <div class="panel-body">
+                            <div id="censusAdultPopulation">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">.</h3>
+                        </div>
+
+                        <!--Hover Rows-->
+                        <!--===================================================-->
+                        <div class="panel-body">
+                            <div id="padronAdultPopulation">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+       
+        
+
+         </div>
+    </div>
+
+</div>
+
+
+@section scripts{
+
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <script src="@Url.Content("~/Scripts/Electoral/ElectoralCharts.js")"></script>
+}
+

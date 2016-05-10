@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CandidatesController.cs" />
+    <Compile Include="Controllers\ElectoralChartsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IncidentsReportController.cs" />
     <Compile Include="Global.asax.cs">
@@ -289,6 +290,7 @@
     <Content Include="css\demo\fonts\nifty-demo-icons.woff" />
     <Content Include="css\demo\fonts\nifty-demo-icons.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Electoral\ElectoralCharts.js" />
     <Content Include="Scripts\Electoral\IncidentsReport.js" />
     <Content Include="Scripts\Electoral\Map.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -319,6 +321,7 @@
     <Content Include="Views\Candidates\Map.cshtml" />
     <Content Include="Views\Candidates\_CandidatesList.cshtml" />
     <Content Include="Views\IncidentsReport\Index.cshtml" />
+    <Content Include="Views\ElectoralCharts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
