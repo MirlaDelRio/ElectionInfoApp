@@ -6,9 +6,20 @@
 
 @section styles{
 
+    <style type="text/css">
+        #mapCandidates {
+            height: 500px;
+            min-width: 310px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
 
-
-<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        .loading {
+            margin-top: 10em;
+            text-align: center;
+            color: gray;
+        }
+    </style>
 }
 
 
@@ -31,11 +42,33 @@
         <!--===================================================-->
         <div id="page-content">
 
-           
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Buscar por Zona</h3>
+                        </div>
 
-            <div id="mapCandidates" style="height: 500px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
-        </div>
+                        <!--Hover Rows-->
+                        <!--===================================================-->
+                        <div class="panel-body">
+                            <div id="mapCandidates">
+                                
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
+      
+
+                        <div class="col-sm-12">
+                            <section id="candidatesList" style="display:none">
+                                @Html.Partial("_CandidatesList")
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
     </div>
 
 </div>
@@ -43,7 +76,7 @@
 
 @section scripts{
 
-<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+ <script src="https://code.highcharts.com/maps/highmaps.js"></script>
 <script src="https://code.highcharts.com/maps/modules/data.js"></script>
 <script src="https://code.highcharts.com/maps/modules/drilldown.js"></script>
 <script src="https://code.highcharts.com/mapdata/countries/do/do-all.js"></script>

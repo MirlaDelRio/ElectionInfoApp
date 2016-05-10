@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace ElectoralSystem.Controllers
 {
-    public class CandidatesController : Controller
+    public class IncidentsReportController : Controller
     {
-        // GET: CandidatesMap
-        public ActionResult Map()
-        {
-            return View();
-        }
-
-        public ActionResult _CandidatesList()
+        // GET: IncidentsReport
+        public ActionResult Index()
         {
             return View();
         }

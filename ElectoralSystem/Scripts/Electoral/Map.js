@@ -39,29 +39,33 @@
 
                         // Show the spinner
                         chart.showLoading('<i class="icon-spinner icon-spin icon-3x"></i>'); // Font Awesome spinner
+                        getCandidatesList();
+                        chart.hideLoading();
+                        clearTimeout(fail);
+
 
                         // Load the drilldown map
-                        $.getScript('https://code.highcharts.com/mapdata/' + mapKey + '.js', function () {
+                        //$.getScript('https://code.highcharts.com/mapdata/' + mapKey + '.js', function () {
 
-                            data = Highcharts.geojson(Highcharts.maps[mapKey]);
+                        //    data = Highcharts.geojson(Highcharts.maps[mapKey]);
 
-                            // Set a non-random bogus value
-                            $.each(data, function (i) {
-                                this.value = i;
-                            });
+                        //    // Set a non-random bogus value
+                        //    $.each(data, function (i) {
+                        //        this.value = i;
+                        //    });
 
-                            // Hide loading and add series
-                            chart.hideLoading();
-                            clearTimeout(fail);
-                            chart.addSeriesAsDrilldown(e.point, {
-                                name: e.point.name,
-                                data: data,
-                                dataLabels: {
-                                    enabled: true,
-                                    format: '{point.name}'
-                                }
-                            });
-                        });
+                        //    // Hide loading and add series
+                        //    chart.hideLoading();
+                        //    clearTimeout(fail);
+                        //    chart.addSeriesAsDrilldown(e.point, {
+                        //        name: e.point.name,
+                        //        data: data,
+                        //        dataLabels: {
+                        //            enabled: true,
+                        //            format: '{point.name}'
+                        //        }
+                        //    });
+                        //});
                     }
 
 
@@ -74,7 +78,7 @@
         },
 
         title: {
-            text: 'Highcharts Map Drilldown'
+            text: 'Candidatos 2016'
         },
 
         subtitle: {
@@ -95,8 +99,8 @@
 
         colorAxis: {
             min: 0,
-            minColor: '#E6E7E8',
-            maxColor: '#005645'
+            minColor: '#E1F5FE',
+            maxColor: '#45ADA8'
         },
 
         mapNavigation: {
@@ -110,7 +114,7 @@
             map: {
                 states: {
                     hover: {
-                        color: '#EEDD66'
+                        color: '#BADA55'
                     }
                 }
             }
@@ -142,6 +146,16 @@
         }
     });
 });
+
+
+function getCandidatesList() {
+
+    $("#candidatesList").show();
+
+    $('html, body').animate({
+        scrollTop: $("#candidatesList").offset().top
+    }, 1000);
+}
 
 
 
