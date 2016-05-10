@@ -213,6 +213,7 @@
     <Content Include="css\themes\type-c\theme-well-red.min.css" />
     <Content Include="css\themes\type-c\theme-yellow.css" />
     <Content Include="css\themes\type-c\theme-yellow.min.css" />
+    <Content Include="css\timeline.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

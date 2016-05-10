@@ -1,16 +1,19 @@
 ﻿$(document).ready(function () {
     getTotalVoters();
     getAdultPopulation();
+    getBudget();
 })
 
 
 function getTotalVoters() {
-     $('#totalVoters').highcharts({
+
+
+    $('#totalVoters').highcharts({
         chart: {
             type: 'column'
         },
         title: {
-            text: 'Total de votantes campaña 2016'
+            text: 'Total de votantes campaña 2012'
         },
         subtitle: {
             text: 'Total de votantes según Padrón Electoral'
@@ -47,12 +50,15 @@ function getTotalVoters() {
             min: 0,
             title: {
                 text: 'Miles'
+            },
+            labels: {
+                format: '{value} km'
             }
         },
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                '<td style="padding:0"><b>{point.y:,.0f} </b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
@@ -64,89 +70,24 @@ function getTotalVoters() {
             }
         },
         series: [{
-            name: 'Votantes 2016',
+            name: 'Votantes 2012',
             data: [1977341, 1711737, 266461, 91815, 72255, 61734, 59982, 35496, 33170, 26989, 26061, 22089,
-21031, 19019, 14362, 12445, 11710,
-11685, 9387, 9340, 6550, 5064]
+                    21031, 19019, 14362, 12445, 11710,
+                    11685, 9387, 9340, 6550, 5064]
 
-        }]
+        }],
+        colors: ["#8BC34A"],
+        exporting: { enabled: false },
+        credits: {
+            enabled: false
+        }
+     
     });
-
-    //Highcharts.createElement('link', {
-    //    href: 'https://fonts.googleapis.com/css?family=Dosis:400,600',
-    //    rel: 'stylesheet',
-    //    type: 'text/css'
-    //}, null, document.getElementsByTagName('head')[0]);
-
 
 
 }
 
 function getAdultPopulation() {
-
-    Highcharts.theme = {
-        colors: ["#FF5252", "#5aaedc", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
-           "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
-        chart: {
-            backgroundColor: null,
-            style: {
-                fontFamily: "Dosis, sans-serif"
-            }
-        },
-        title: {
-            style: {
-                fontSize: '16px',
-                fontWeight: 'bold',
-                textTransform: 'uppercase'
-            }
-        },
-        tooltip: {
-            borderWidth: 0,
-            backgroundColor: 'rgba(219,219,216,0.8)',
-            shadow: false
-        },
-        legend: {
-            itemStyle: {
-                fontWeight: 'bold',
-                fontSize: '13px'
-            }
-        },
-        xAxis: {
-            gridLineWidth: 1,
-            labels: {
-                style: {
-                    fontSize: '12px'
-                }
-            }
-        },
-        yAxis: {
-            minorTickInterval: 'auto',
-            title: {
-                style: {
-                    textTransform: 'uppercase'
-                }
-            },
-            labels: {
-                style: {
-                    fontSize: '12px'
-                }
-            }
-        },
-        plotOptions: {
-            candlestick: {
-                lineColor: '#404048'
-            }
-        },
-
-
-        // General
-        background2: '#F0F0EA'
-
-    };
-
-    // Apply the theme
-    Highcharts.setOptions(Highcharts.theme);
-
 
     $('#censusAdultPopulation').highcharts({
         chart: {
@@ -195,7 +136,13 @@ function getAdultPopulation() {
                     }
                 }
             ]
-        }]
+        }],
+        colors: ["#FF5252", "#5aaedc", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
+           "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+        exporting: { enabled: false },
+        credits: {
+            enabled: false
+        }
     });
 
     $('#padronAdultPopulation').highcharts({
@@ -244,9 +191,140 @@ function getAdultPopulation() {
                     }
                 }
             ]
-        }]
+        }],
+        colors: ["#FF5252", "#5aaedc", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
+           "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+        exporting: { enabled: false },
+        credits: {
+            enabled: false
+        }
+    });
+
+}
+
+function getBudget() {
+
+
+    $(function () {
+        $('#budget').highcharts({
+            chart: {
+                type: 'areaspline'
+            },
+            title: {
+                text: ''
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                verticalAlign: 'top',
+                x: 150,
+                y: 100,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+            },
+            xAxis: {
+                categories: [
+                'PRD',
+                'PLD',
+                'PRSC',
+                'MODA',
+                'BIS',
+                'PRSD',
+                'PQDC',
+                'UDC',
+                'PHD',
+                'FNP',
+                'PCR',
+                'PTD',
+                'PPC',
+                'PAL',
+                'PRM',
+                'PASOVE',
+                'PUN',
+                'PDI',
+                'PLR',
+                'PDP',
+                'DXC',
+                'FRENT',
+                'APD',
+                'PNVC',
+                'PRI',
+                'ALPAIS',
+                'MJP',
+                'MIUP',
+                'APC',
+                'MOPIS',
+                'MORECO',
+                'ARBA',
+                'MOPAG',
+                'MAS'
+                ],
+                plotBands: [{ // visualize the weekend
+                    from: 4.5,
+                    to: 6.5,
+                    color: 'rgba(68, 170, 213, .2)'
+                }]
+            },
+            yAxis: {
+                title: {
+                    text: 'Fruit units'
+                }
+            },
+            tooltip: {
+                shared: true,
+                valueSuffix: ' units'
+            },
+            credits: {
+                enabled: false
+            },            
+            series: [{
+                name: '2016',
+                data: [429356512.80,
+                        429356512.80,
+                        429356512.80,
+                        28604039.04,
+                        24294035.96,
+                        21975756.70,
+                        21589707.35,
+                        16194270.98,
+                        15947922.14,
+                        15681741.99,
+                        14319772.20,
+                        14115289.44,
+                        13240067.96,
+                        13006939.98,
+                        12563600.19,
+                        11537440.46,
+                        11115033.72,
+                        10953078.08,
+                        10947569.39,
+                        10441210.13,
+                        10430853.79,
+                        9816083.41,
+                        9488646.57,
+                        8372805.28,
+                        8372805.28,
+                        8372805.28,
+                        264962.19,
+                        52992.44,
+                        52992.44,
+                        52992.44,
+                        52992.44,
+                        52992.44,
+                        52992.44,
+                        52992.44]
+            }],
+            colors: ["#5aaedc"],
+            exporting: { enabled: false },
+            credits: {
+                enabled: false
+            }
+        });
     });
 
 
 
 }
+
+
